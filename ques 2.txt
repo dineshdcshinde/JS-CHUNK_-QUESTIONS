@@ -257,59 +257,471 @@ console.log(`Sum of numbers from 1 to 10 is: ${sum}`);
 
 	42.	Create a function to calculate the area of a circle with a given radius.
 	answer - 
-	
-
-
+	function areaOfCircle(r) {
+  	return (Math.PI * (r * r)).toFixed(2);
+	}
+	console.log(areaOfCircle(2));
 
 	43.	Write a function that accepts an array and returns the sum of its elements.
+	let arr = [1, 2, 3, 4, 5];
+	let sum = 0;
+	function sumofArr(arr) {
+	arr.forEach((value) => {
+		sum += value;
+	});
+	return sum;
+	}
+	console.log(sumofArr(arr));
+
 	44.	Create a function that checks if a string starts with a specific character.
+	answer - 
+	function checkSpecialCharacters(str) {
+  	if (str.includes("!", "@", 	"\\", 		">", "<", "<=")) {
+    console.log("Str has the special characters");
+  	} else {
+    console.log("Str has no special characters");
+  	}
+	}
+	checkSpecialCharacters("Hello@");
+
 	45.	Write a function to find the maximum of two numbers.
+	answer - 
+	function findMax (a,b){
+  	if(a>b){
+    console.log("Maximum value is ", a)
+	}else{
+		console.log("Maximum value is ", b)
+	}
+	}
+
+	findMax(50, 10)
+
 	46.	Create a function that takes a number and returns its factorial.
+	answer - 
+	function printFactorial(val) {
+	let fact = 1;
+	for (let i = 1; i <= val; i++) {
+		fact *= i;
+	}
+	return fact;
+	}
+	console.log(printFactorial(5));
+
 	47.	Write a function that accepts a string and returns its reverse.
+	answer-
+	let str = "abc";
+	function reverseStr(str) {
+	let reverseStr = "";
+	for (let i = str.length - 1; i >= 0; i--) {
+		reverseStr += str[i];
+	}
+	return reverseStr;
+	}
+	console.log(reverseStr(str));
+
+
+
+
 	48.	Create a function to find the largest number in an array.
+	answer - 
+	let arr = [1,23,5000,7];
+	let max =0;
+	function findMax(arr){
+		for(let i =0; i<arr.length; i++){
+			if(arr[i]>max){
+				max = arr[i]
+			}
+		}
+		return max;
+	}
+
+	console.log(findMax(arr))
+
+
 	49.	Write a function that converts a string to kebab-case (e.g., "Hello World" → "hello-world").
+	answer - 
+	let str = "hello world"
+	function kebabCase (str){
+		return str.replaceAll(" ", "-")
+	}
+	console.log(kebabCase(str))
+
 	50.	Create a function that logs "Hello, World!" every time it is called.
+	answer - 
+	function greetHW(){
+    return console.log("hello world");
+	}
+	greetHW()
+	greetHW()
 
 6. Conditionals (10 Questions)
 	51.	Write a program to check if a number is positive, negative, or zero.
+	answer - 
+	let num = -1;
+	if(num >0){
+		console.log("Number is positive")
+	} else if(num == 0){
+		console.log("Number is zero")
+	}else{
+		console.log("Number is negative")
+	}
+
+
 	52.	Create a program to check if a year is a leap year.
+	answer - 
+	let year = 1999;
+	if (year % 4 == 0) {
+	console.log(year + " is a leap year");
+	} else {
+	console.log(year + " is not a leap year");
+	}
+
 	53.	Write an if...else statement to determine if a person can vote based on their age.
+	answer - 
+	let age = 7;
+	if(age >= 18){
+		console.log("You can vote");
+	}else{
+		console.log(`You can't vote for ${18 - age} yrs`)
+	}
+
+
 	54.	Use a switch statement to log the name of the day based on its number (1 = Monday).
+	answer - 
+	let day = 6;
+	switch (day) {
+		case 1:
+			console.log("Monday!");
+			break;
+		case 2:
+			console.log("Tuesday!");
+			break;
+		case 3:
+			console.log("Wed!");
+			break;
+		case 4:
+			console.log("Friday!");
+			break;
+		case 5:
+			console.log("Saturday!");
+			break;
+		case 6:
+			console.log("Sunday!");
+			break;
+
+		default:
+			console.log("Invalid number !");
+			break;
+		}
+
 	55.	Write a program to check if a number is divisible by 3 and 5.
+	answer - 
+	let num = 15;
+	if (num % 3 == 0 && num % 5 == 0) {
+	console.log("Divisible");
+	} else {
+	console.log("Not divisible");
+	}
+
 	56.	Create a program to check the grade of a student based on marks.
+	answer - 
+	let marks = 86;
+	if (marks < 35) {
+	console.log("Failed");
+	} else if (marks >= 35 && marks <= 65) {
+	console.log("B grade");
+	} else if (marks >= 65 && marks <= 85) {
+	console.log("A grade");
+	} else {
+	console.log("A+ grade");
+	}
+
 	57.	Write an if condition to compare two strings and log if they are equal.
+	answer - 
+	let str = "abc";
+	let str2 = "abcd";
+	if (str === str2) {
+	console.log("Same String");
+	} else {
+	console.log("Not same strings");
+	}
+
 	58.	Use a ternary operator to check if a number is even or odd.
+	answer - 
+	let num = 8; 
+	num % 2 == 0? console.log("even"): console.log("odd")
+
 	59.	Write a program to find the largest of three numbers using if...else.
+	answer -
+	let first = 100;
+	let second = 20;
+	let third = 3;
+	if (first > second && first > third) {
+	console.log("largest is", first);
+	} else if (second > first && second > third) {
+	console.log("largest is", second);
+	} else {
+	console.log("largest is", third);
+	}
+
 	60.	Create a program to calculate the discount based on the price of an item.
+	answer - 
+	let item = 555;
+	if (item > 1000) {
+	let disccountedPrice = (item * 10) / 100;
+	console.log("Discounted Price: $" + (item - disccountedPrice).toFixed(2));
+	} else if (item > 500) {
+	let disccountedPrice = (item * 5) / 100;
+	console.log("Discounted Price: $" + (item - disccountedPrice).toFixed(2));
+	}
 
 7. Object Basics (10 Questions)
 	61.	Create an object with properties name, age, and city. Log the object.
+	answer - 
+	let obj = {
+    name : 'johndoe',
+    age:30,
+    city: "Bhopal"
+	}
+	console.log(obj)
+
+
 	62.	Add a new property isStudent to the object above and set it to true.
+	answer - 
+	let obj = {
+    name : 'johndoe',
+    age:30,
+    city: "Bhopal"
+	}
+	obj.isStudent = true
+	console.log(obj)
+
 	63.	Access and log the value of the city property using bracket notation.
+	answer - 
+	let obj = {
+		name : 'johndoe',
+		age:30,
+		city: "Bhopal"
+		}
+
+		console.log(obj["city"])
+
+
 	64.	Delete the age property from an object and log the updated object.
+	answer - 
+	let obj = {
+    name : 'johndoe',
+    age:30,
+    city: "Bhopal"
+	}
+    delete obj["age"]
+    console.log(obj)
+
 	65.	Write a function that accepts an object and logs all its keys.
+	answer - 
+	let info = {
+	name: "John Doe",
+	age: 30,
+	city: "Bhopal",
+	};
+	function addProperty(key, value) {
+	return (info[key] = value);
+	}
+	addProperty("gender", "Male");
+	console.log(info)
+
 	66.	Create an array of objects representing books with title and author properties.
+	answer - 
+	let books = [
+	{
+		title: "abc",
+		author: "pqr",
+	},
+	{
+		title: "def",
+		author: "stu",
+	},
+	];
+	console.log(books);
+
 	67.	Access and log the author of the second book in the array.
+	answer - 
+		let books = [
+		{
+		title: "abc",
+		author: "pqr",
+		},
+		{
+		title: "def",
+		author: "stu",
+		},
+	];
+	console.log(books[1].author);
+
 	68.	Write a program to check if a specific key exists in an object.
+	answer- 
+		let obj = {
+		title: "To Kill a Mockingbird",
+		author: "Harper Lee",
+		publicationYear: 1960,
+		genre: "Classic Fiction"
+	}
+	console.log(obj.hasOwnProperty("author"))
+	console.log("genre" in obj)
+
 	69.	Create a function to count the number of keys in an object.
+	answer -
+	let obj = {
+	name: "John",
+	age: 30,
+	city: "Bhopal",
+	hobbies: ["reading", "painting","cooking"]
+	};
+
+	function countKey(obj) {
+	let count = 0;
+	for (const key in obj) {
+			count ++;
+	}
+	return count; 
+	}
+	console.log(countKey(obj));
+
 	70.	Use Object.assign() to merge two objects.
+	answer - 
+	let obj1 ={
+    name: 'abc',
+    age: 25
+	}
+	let obj2 ={
+		fname: 'pqr',
+		isStudent : true
+	}
+	console.log(Object.assign(obj1, obj2));
+
+
 
 8. String Manipulation (10 Questions)
 	71.	Create a string and log its length.
+	answer-
+		let str = "abc"
+		console.log(str.length);
+
 	72.	Extract the last 4 characters of a string.
+	answer - 
+		let str = "abcdef"
+		console.log(str.slice(2))
+
 	73.	Convert a string to lowercase and log it.
+	amswer- 
+		let str = "HELLO, WORLD!"
+		console.log(str.toLowerCase());
+
 	74.	Split a sentence into words using .split() and log the result.
+	answer - 
+		let sentence = "Hi, there! How are u ???"
+		console.log(sentence.split(" "))
+
 	75.	Find the position of the first occurrence of "a" in a string.
+	answer - 
+		let str = "abca"
+		console.log(str.indexOf("a"))
+
 	76.	Replace "JavaScript" with "JS" in the string "I love JavaScript".
+	answer- 
+		let str = "I love JavaScript";
+		console.log((str = str.replace("JavaScript", "JS")));
+
 	77.	Repeat a string 3 times using .repeat().
+	answer- 
+		let str = "Hello "
+		console.log(str.repeat(3))
+
 	78.	Create a function that checks if a string contains a specific word.
+	answer- 
+		let str = "Hello, World";
+		function checkSpecificWord(str, specifcWord) {
+		str = str.toLowerCase();
+		specifcWord = specifcWord.toLowerCase();
+		return str.includes(specifcWord);
+		}
+		console.log(checkSpecificWord(str, "world")); 
+
+
+
 	79.	Write a program to remove whitespace from both ends of a string.
+	answer- 
+		let str = "              Hello, World              ";
+		str = str.trim(); 
+		console.log(str)
+
+
 	80.	Create a function to count the number of vowels in a string.
+	answer- 
+		let str = "hello world"
+		let count = 0;
+		let vowels = "aeiou"
+		function countVowels(str){
+			str = str.toLowerCase()
+			for (const char of str) {
+				if(vowels.includes(char)){
+					count++
+				}
+			}
+			return count;
+		}
+		console.log(countVowels(str))
 
 Mixed Practice (20 Questions)
 	81.	Write a function that accepts an array of numbers and returns only the even numbers.
+	answer - 
+		let arr = [1,2,3,4,5,6];
+		let evenArr=[]
+		function isEven(arr){
+			arr.forEach(ele => {
+				if(ele %2==0){
+					evenArr.push(ele)
+				}
+			});
+			return evenArr;
+		}
+		console.log(isEven(arr));
+
 	82.	Create a program to count the occurrences of a specific value in an array.
+	answer- 
+		let arr = [1, 2, 3, 4, 5, "abc", "pqr", "@",2,2,2,2,2,2,2,2,2,2,2,22,2,2,2,2,2,2,22,2,2,,2
+		];
+		let count = 0;
+		function checkOccurance(arr, checkValue) {
+		for (const elem of arr) {
+			if (elem === checkValue) {
+			count++;
+			}
+		}
+
+		return count;
+		}
+		console.log(checkOccurance(arr, 2));
+
+
 	83.	Write a function that accepts a string and returns whether it’s a palindrome.
+	answer- 
+		let str = "level"
+		let reverse = ""
+
+		function isPalindrome(str){
+			str = str.toLowerCase();
+			for(let i = str.length-1; i>=0; i--){
+				reverse += str[i];
+			}
+			if(reverse === str){
+				console.log("String is palindrome")
+			}else{
+				console.log("String is not palindrome")
+			}
+		}
+isPalindrome(str)
+
 	84.	Create a program to log a pattern:
 
 *
@@ -318,20 +730,181 @@ Mixed Practice (20 Questions)
 ****
 
 	85.	Write a function that returns the square of each number in an array.
-	86.	Use a for loop to sum all odd numbers between 1 and 50.
-	87.	Create an object representing a person and log their full name.
-	88.	Write a program to convert the string "10" to a number and add 5 to it.
-	89.	Write a program to reverse an array without using .reverse().
-	90.	Create a program to check if an array is empty.
-	91.	Write a program to fetch the current date and format it as DD/MM/YYYY.
-	92.	Write a program to find the smallest number in an array.
-	93.	Create a function to return the Fibonacci sequence up to n terms.
-	94.	Use a try...catch block to handle division by zero.
-	95.	Write a program to find the index of the first vowel in a string.
-	96.	Create a function that accepts an array and returns only unique values.
-	97.	Write a program to merge two sorted arrays into one sorted array.
-	98.	Create a function to count the number of words in a string.
-	99.	Write a program to toggle a button’s background color when clicked.
-	100.	Write a function to check if all elements in an array are greater than a specific value.
+	answer- 
+		let arr = [1, 2, 3, 4];
+		let squareArr = [];
+		function giveSquare(arr) {
+		for (const ele of arr) {
+			squareArr.push(ele * ele);
+		}
+		return squareArr;
+		}
+		console.log(giveSquare(arr));
 
-These questions cover a wide range of fundamental JavaScript concepts. Let me know if you’d like further clarification or solutions for any of these!
+
+
+
+	86.	Use a for loop to sum all odd numbers between 1 and 50.
+	answer- 
+		let sum = 0;
+		for (let i = 1; i < 51; i++) {
+		if (i % 2 !== 0) {
+			sum += i;
+		}
+		}
+		console.log(sum);
+
+
+
+
+	87.	Create an object representing a person and log their full name.
+	answer - 
+		const person = {
+		firstName: "Kundan",
+		lastName: "Kumar"
+		};
+	
+		console.log(`${person.firstName} ${person.lastName}`);
+
+	88.	Write a program to convert the string "10" to a number and add 5 to it.
+	answer- 
+	function convertType(val) {
+		let number;
+		let str;
+		if (typeof val === "string") {
+			return (number = Number(val));
+		} else {
+			return (str = String(val));
+		}
+		}
+		console.log(convertType(2));
+
+
+
+
+	89.	Write a program to reverse an array without using .reverse().
+	answer- 
+			let arr = [1,2,3,4,5,6]
+		let reverse =[]
+		for (var i= arr.length-1; i>0; i--) {
+			reverse.push(arr[i])
+		}
+		console.log( reverse)
+
+	90.	Create a program to check if an array is empty.
+	answer- 
+			let arr =[]
+		function checkArray(arr){
+			if(arr.length >0){
+				console.log("The array is not empty!")
+			}else{
+				console.log("Array is empty!");
+				
+			}
+		}
+		checkArray(arr)
+
+	91.	Write a program to fetch the current date and format it as DD/MM/YYYY.
+	answer- 
+	console.log(new Date().toLocaleDateString())
+	
+	92.	Write a program to find the smallest number in an array.
+	answer- 
+		let arr = [-1,2,3,4,5,6,7,8,9,10,11,12]
+
+		let min = arr[0];
+
+		for(let i=0; i<arr.length; i++){
+		if(arr[i] < min){
+			min = arr[i]
+		}
+		}
+		console.log(min)
+
+	93.	Create a function to return the Fibonacci sequence up to n terms.
+	answer - 
+
+
+
+
+
+	94.	Use a try...catch block to handle division by zero.
+	answer- 
+		let num = 15; 
+
+		try {
+			if(num / 0 == Infinity ){
+				throw new Error("Division by zero is not allowed");
+			}
+		} catch (error) {
+			console.log(error)
+		}
+
+	95.	Write a program to find the index of the first vowel in a string.
+
+
+
+
+	96.	Create a function that accepts an array and returns only unique values.
+	answer- 
+		let arr = [1,2,2,2,2,3,33,33,3,3,3,3,3,33,3,4,5]
+		let unique =[]
+		function getUniqueValue(val){
+			for(let i=0; i<arr.length; i++){
+				if(unique.indexOf(val[i]) == -1){
+					unique.push(val[i])
+				}
+			}
+			return unique
+		}
+		console.log(getUniqueValue(arr));
+
+	97.	Write a program to merge two sorted arrays into one sorted array.
+	
+
+
+
+	98.	Create a function to count the number of words in a string.
+	answer - 
+	let words = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+	let str = "abc"
+	let count = 0; 
+	function countWords(str){
+		for(let i=0; i<str.length; i++){
+		if(words.includes(str[i])){
+			count++
+		}
+		}
+		return count;
+	}
+	console.log(countWords(str))
+
+
+	99.	Write a program to toggle a button’s background color when 	clicked.
+	answer-
+		let btn = document.querySelector('.btn')
+
+		btn.addEventListener('click', () => {
+			btn.classList.toggle('abc')
+		}) 
+
+	100.	Write a function to check if all elements in an array are greater than a specific value.
+	answer - 
+	let arr = [1,2,3,4,5,6]
+
+		let min=0;
+		let output = false;
+		function findMin(arr, min){
+			for(let i =0; i<arr.length; i++){
+				if(arr[i]>min){
+					min = arr[i];
+					output = true;
+				}
+			}
+
+			return output
+		}
+
+		console.log(findMin(arr,1))
+
+
