@@ -384,8 +384,11 @@ answer-
 	36.	Implement a function that throttles an API call.
 
 	37.	Create a higher-order function that applies a callback to each element of an array.
+
 	38.	Write a function that calculates the GCD (Greatest Common Divisor) of two numbers.
+
 	39.	Create a function that accepts an array of functions and executes them sequentially.
+
 	40.	Write a function to curry a simple mathematical operation.
 
 5. Strings and Regular Expressions (10 Questions)
@@ -442,13 +445,40 @@ answer-
 
 	46.	Create a program to capitalize the first letter of each word in a string.
 	answer- 
-
-
-
-
+	let str = "hello world!";
+	let finalResult = "";
+	function CapitalizeFirstLetter(str) {
+	let words = str.split(" ");
+	for (const word of words) {
+		let firstLetter = word.charAt(0).toUpperCase();
+		let restWords = word.slice(1);
+		finalResult += firstLetter + restWords + " ";
+	}
+	return finalResult;
+	}
+	console.log(CapitalizeFirstLetter(str));
 
 	47.	Write a function that removes duplicate characters from a string.
+	answer- 
+	let str = "abcccdd"
+	let result = ""
+	function removeDuplicates(str){
+		for(let i=0; i<str.length; i++){
+			if(result.indexOf(str[i])===-1){
+				result += str[i]
+			}
+		}
+		return result
+	}
+	console.log(removeDuplicates(str))
+
 	48.	Use a regex to replace multiple spaces with a single space.
+	answer- 
+	let str = "ab      cd                                d e f g   h i j   k l n o";
+	let regex = /\s+/g;
+	let cleanedStr = str.replace(regex, " ");
+	console.log(cleanedStr);
+
 	49.	Write a function to check if a string is an anagram of another string.
 	answer- 
 	let str1  = "silent"
@@ -465,8 +495,23 @@ answer-
 	checkAnagrams(str1, str2)
 
 	50.	Create a function to count the frequency of each word in a string.
-
-
+	answer- 
+	let regex = /\b\w+\b/g;
+	let str = "Hello there! How are you? What are you doing today?";
+	function countWordFrequency(str) {
+		str = str.toLowerCase()
+	let words = str.match(regex);
+	let wordFrequency = {};
+	for (const word of words) {
+		if (wordFrequency[word]) {
+		wordFrequency[word]++;
+		} else {
+		wordFrequency[word] = 1;
+		}
+	}
+	return wordFrequency;
+	}
+	console.log(countWordFrequency(str));
 
 6. Intermediate DOM Manipulation (10 Questions)
 	51.	Write a script to dynamically create 10 buttons on a webpage.
@@ -500,8 +545,35 @@ answer-
 
 
 	54.	Dynamically add a CSS class to an element when a button is clicked.
+	answer- 
+	let button = document.createElement("button");
+	button.textContent = "Click me";
+	document.body.appendChild(button);
+
+	button.addEventListener("click", () => {
+	button.classList.add("btn");
+	});
+
 	55.	Create a function to toggle the visibility of an element.
+	answer- 
+	function toggleVisibility(elementId) {
+	let element = document.getElementById(elementId);
+
+	if (element.style.display === "none") {
+		element.style.display = "block";
+	} else {
+		element.style.display = "none";
+	}
+	}
+
 	56.	Write a program to count the number of <p> tags on a page.
+	answer- 
+	let paragraphs = document.querySelectorAll("p")
+	function countParagraph (paragraphs){
+		return console.log(`${paragraphs.length} paragraphs are there!`)
+	}
+	countParagraph(paragraphs)
+
 	57.	Implement a function to disable all input fields on a form.
 	58.	Write a program to clone an element and append it to the DOM.
 	59.	Add a click event to a list of items and display the clicked item’s text.
@@ -509,6 +581,7 @@ answer-
 
 7. Intermediate Algorithms (10 Questions)
 	61.	Write a function to merge two sorted arrays into one sorted array.
+
 	62.	Implement a binary search algorithm.
 	63.	Write a function to check if two strings are one edit away.
 	64.	Create a function that finds the longest common prefix in an array of strings.
@@ -521,7 +594,26 @@ answer-
 
 8. Advanced Error Handling (10 Questions)
 	71.	Write a program to handle a division by zero error.
+	answer- 
+	let num = 55;
+	function giveDivision(num, divisor) {
+	if (num / divisor === Infinity) {
+		return "Cannot divide by zero";
+	} else {
+		return num / divisor;
+	}
+	}
+
+	try {
+	console.log(giveDivision(num, 2));
+	console.log(giveDivision(num, 0));
+	console.log(giveDivision(5, 2));
+	} catch (error) {
+	console.log(error);
+	}
+
 	72.	Use try...catch to log an error message for invalid JSON parsing.
+	
 	73.	Write a function to validate user input and throw a custom error if invalid.
 	74.	Create a program to handle a failed promise using .catch().
 	75.	Use finally to log a cleanup message after a promise resolves or rejects.

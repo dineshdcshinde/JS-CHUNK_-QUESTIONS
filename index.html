@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
     <style>
         .abc{
             background-color: #3f76e5;
@@ -37,11 +39,52 @@
         cursor: pointer;
         }
 
+        #content {
+      display: block;  
+    }
+
+    .formContianer form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    form input{
+        padding: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
     </style>
 </head>
 <body>
     <!-- <button class="btn">Button</button> -->
-     <div class="container"></div>
+     <!-- <div class="container">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+
+     </div> -->
+
+
+     <!-- <button onclick="toggleVisibility('content')">Toggle Visibility</button>
+<div id="content">
+  <p>This content will toggle visibility.</p> -->
+<!-- </div> -->
+
+<div class="formContianer">
+    <form action="#" >
+        <input type="text" class="" placeholder="Enter your name">
+        <input type="email" placeholder="Enter your email">
+        <input type="password" placeholder="Enter your password">
+        <button class="btn">Submit</button>
+    </form>
+</div>
+
+
     <script src="index.js"></script>
 </body>
 </html>
