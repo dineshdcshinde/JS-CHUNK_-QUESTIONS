@@ -1,13 +1,8 @@
-let jsonString = {
-  "name": "John Doe",
-  "age": 30,
-  "city": "New York"
-}   
-
-try {
-    let jsonData = JSON.parse(jsonString);
-    console.log(jsonData);
-    
-} catch (error) {
-    console.error(`Error occured : ${error.message}`);
+let heroElements = document.getElementsByClassName("hero");
+if (heroElements.length > 0) {
+  let hero = heroElements[0];
+  hero.setAttribute("id", "featured");
+  console.log(hero);
+} else {
+  console.log("No elements with class 'hero' found.");
 }
