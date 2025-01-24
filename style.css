@@ -1,9 +1,41 @@
-.box{
-    width: 100px;
-    height: 100px;
-    background-color: #ececec;
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #ececec;
 }
 
 .para {
-    display: hidden;
+  display: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ececec;
+}
+
+.darkMode {
+  background-color: #3c3c3c;
+  color: #ececec;
+}
+
+.lighMode {
+  background-color: #ececec;
+  color: #3c3c3c;
+}
+
+
+.popup{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  background-color: #c1b5b5;
+  border-radius: 0.4rem;
+  color: black;
+  padding: 0.3rem;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
