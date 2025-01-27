@@ -111,29 +111,230 @@ answer-
 	});
 
 	12.	Select all <button> elements with the class primary and change their background color to a gradient.
+	answer- 
+	const btns = [...document.querySelectorAll(".primary")];
+	btns.forEach((btn) => {
+	btn.style.background =
+		"linear-gradient(to right, rgba(255, 0,0,0), rgba(255, 0, 0, 1))";
+	});	
+
 	13.	Write a function that applies inline styles to an element dynamically based on user input (e.g., font size, color).
+	answer- 
+	const fontSize = document.querySelector("#fontSize");
+	const color = document.querySelector("#color");
+	const changeText = document.querySelector("#change");
+
+	fontSize.addEventListener("input", () => {
+	let fontSizeValue = Number(fontSize.value);
+	changeText.style.fontSize = `${fontSizeValue}px`;
+	});
+
+	color.addEventListener("input", () => {
+	changeText.style.color = color.value;
+	});
+
 	14.	Add a shadow to all <img> elements when the page loads.
+	answer- 
+	const images = [...document.querySelectorAll("img")]
+
+	images.forEach((img)=>{
+		img.style.boxShadow = "5px 10px #888888"
+	})
+
 	15.	Select a <div> with the class highlighted and add CSS animations to it.
-	16.	Write a function that adds a click event listener to all <li> elements inside a <ul> and logs the text content of the clicked item.
+	answer- 
+	const highlighted = document.querySelector(".highlighted")
+
+	highlighted.classList.add("spinning")
+	console.log(highlighted)
+
+	16.	Write a function that adds a click event listener to all <li> elements inside a <ul> and logs the text 	content of the clicked item.
+	answer- 
+	const printName = () => {
+	const elements = [...document.querySelectorAll("li")];
+	elements.forEach((ele) => {
+		ele.addEventListener("click", () => {
+		console.log(ele.textContent);
+		});
+	});
+	};
+	printName();
+
+
 	17.	Add a mouseover event listener to a <button> that changes its text color when hovered and reverts when not.
+	answer- 
+
+	const btn  = document.querySelector("button")
+
+	btn.addEventListener("mouseover", ()=>{
+		btn.style.color = "red"
+		btn.textContent = "mouse over"
+	})
+
+	btn.addEventListener("mouseout", ()=>{
+		btn.style.color = "black"
+		btn.textContent = "Click Me"
+	})
+
 	18.	Write a function to listen for a change event on a <select> dropdown and log the selected value.
+	answer- 
+	function printSelectValue() {
+	const select = document.querySelector("#select");
+
+	select.addEventListener("change", () => {
+		console.log(select.value);
+	});
+	}
+	printSelectValue();
+
 	19.	Create an event listener that listens for double clicks (dblclick) on a <div> and changes its background color.
+	answer- 
+	const card = document.querySelector('.card');
+	card.addEventListener("dblclick", ()=>{
+		card.style.backgroundColor = "red"
+	})
+
 	20.	Add a global keypress event listener that logs the pressed key and its keycode to the console.
+	answer- 
+	window.addEventListener("keypress", (event) => {
+	console.log("keyCode:", event.keyCode);
+	console.log("Key", event.key);
+	});
+
 	21.	Write code to add the class completed to every <li> element that contains the text "done".
+	answer- 
+	const liElements = [...document.querySelectorAll("li")];
+
+	liElements.forEach((ele) => {
+	if (ele.textContent == "done") {
+		ele.classList.add("completed");
+	}
+	});
+
 	22.	Write a function to toggle a class active on an element every time it’s clicked.
+	answer- 
+	const btn = document.querySelector("button");
+	btn.addEventListener("click", ()=>{
+		btn.classList.toggle("active")
+	})
+
 	23.	Add a new data-id attribute to each <li> element in an ordered list, setting its value to the index of the element.
+	answer- 
+	const orderList = document.querySelector("ol");
+
+	const elements = [...orderList.querySelectorAll("li")];
+
+	elements.forEach((ele, i) => {
+	ele.setAttribute("data-id", `${i + 1}`);
+	});
+
 	24.	Write code to remove the disabled attribute from all <input> fields with the class editable.
+	answer- 
+	const editable = document.querySelectorAll("input");
+	editable.forEach((ele) => {
+	ele.removeAttribute("disabled");
+	});
+
 	25.	Write a function that checks whether an element has a specific class and logs the result.
+	answer- 
+	function isClass(classd, specificClass) {
+	const searchingClass = document.querySelector(`.${classd}`);
+	let output = searchingClass.classList.contains(`${specificClass}`);
+	return output ? "Present" : "NotPresent"
+	}
+	isClass("container", "abc");
+
 	26.	Create a <div> dynamically with the class modal, some inner content, and append it to the <body>.
+	answer- 
+	const modal = document.createElement('div');
+	modal.classList.add("modal")
+	const para = document.createElement("p")
+	para.innerText = "I am inside a modal container"
+	modal.appendChild(para)
+	document.body.appendChild(modal)
+
 	27.	Write a function that generates a <ul> from an array of strings, appending each string as an <li>.
+	answer- 
+	const arrElements = ["mango", "orange", "pomegranate", "apple"];
+	const appendLiElements = () => {
+	const unorderList = document.createElement("ul");
+	const elements = arrElements.forEach((ele, i) => {
+		let li = document.createElement("li");
+		li.innerText = `${ele}`;
+		li.setAttribute("id", `${i} `);
+		ul.appendChild(li);
+	});
+	document.body.appendChild(unorderList);
+	};
+
 	28.	Dynamically create and append a table with 3 rows and 2 columns to a <div> with the ID table-container.
+	answer- 
+
+
+
+
+
 	29.	Write code to create a form with two <input> fields and a <button> and append it to the <body>.
+	answer- 
+	const form = document.createElement("form");
+	const name = document.createElement("input");
+	name.placeholder = "Enter your name";
+	const pass = document.createElement("input");
+	pass.placeholder = "Enter your pass";
+	const submit = document.createElement("Button");
+	submit.textContent = "Submit";
+	form.appendChild(name);
+	form.appendChild(pass);
+	form.appendChild(submit);
+	document.body.appendChild(form);
+
 	30.	Create a function that appends 10 numbered <button> elements to a <div> and adds a click event listener to each button.
 	31.	Write code to add the class red-border to all <img> elements except those with the class no-border.
+	answer- 
+	const redBorderedImages = document.querySelectorAll(".red-border");
+
+	redBorderedImages.forEach((img) => {
+	img.style.border = "2px solid red";
+	});
+
 	32.	Select all <p> elements inside a <div> and prepend "Note: " to their text content.
+	answer- 
+	const paras = [...document.querySelectorAll(".container p")]
+
+	paras.forEach((para)=>{
+		para.prepend("note: ")
+	})
+
 	33.	Write a function that removes all child elements from a <div> with the class clear-me.
+	answer- 
+	function removeChild(removeClass) {
+	const removeChildClass = document.querySelectorAll(`.${removeClass}`);
+
+	removeChildClass.forEach((ele) => {
+		ele.parentElement.removeChild(ele);
+	});
+	}
+	removeChild("clear-me");
+
 	34.	Add a click event listener to all <a> elements with the class external that prevents their default behavior.
+	answer- 
+
+	const exteranl = document.querySelectorAll(".external");
+
+	exteranl.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
+		e.preventDefault();
+		console.log("I will not navigate");
+	});
+	});
+
 	35.	Write code to duplicate all <li> elements in an unordered list and append the duplicates to the same list.
+	answer- 
+	
+
+
+
+
 	36.	Write a function to validate an email input field and display an error message if the email is invalid.
 	37.	Add a submit event listener to a form that logs the form data as an object when submitted.
 	38.	Write code to clear all form fields when a reset button is clicked.
