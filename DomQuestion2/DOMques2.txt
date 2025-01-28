@@ -330,13 +330,54 @@ answer-
 
 	35.	Write code to duplicate all <li> elements in an unordered list and append the duplicates to the same list.
 	answer- 
-	
+	const unorderList = document.querySelector("ul")
+	const listElements = [...unorderList.querySelectorAll("li")]
 
-
-
+	listElements.forEach((ele)=>{
+		const duplicateElemets = ele.cloneNode(true)
+		unorderList.appendChild(duplicateElemets)
+	})
 
 	36.	Write a function to validate an email input field and display an error message if the email is invalid.
+	answer- 
+	const email = document.querySelector("input");
+	const formSubmit = document.querySelector("#formSumbit");
+
+	let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+	function validateEmail() {}
+
+	formSubmit.addEventListener("submit", (e) => {
+	e.preventDefault();
+	let emailValue = email.value;
+
+	const existingError = document.querySelector("small");
+	if (existingError) {
+		existingError.parentNode.removeChild(existingError);
+	}
+
+	if (!emailValue) {
+		alert("Please enter an email address");
+		return;
+	} else if (emailRegex.test(emailValue)) {
+		alert("email valid!");
+		console.log(emailValue);
+		formSubmit.reset();
+	} else {
+		const errorMessage = document.createElement("small");
+		errorMessage.innerText = "Invalid email address";
+		errorMessage.style.color = "red";
+		email.parentNode.appendChild(errorMessage);
+		formSubmit.reset();
+	}
+	});
+
 	37.	Add a submit event listener to a form that logs the form data as an object when submitted.
+	answer- 
+
+
+
+	
 	38.	Write code to clear all form fields when a reset button is clicked.
 	39.	Create a function that dynamically adds a new <input> field when a button is clicked.
 	40.	Write a function to disable a form’s submit button until all required fields are filled.

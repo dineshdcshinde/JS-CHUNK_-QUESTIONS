@@ -1,0 +1,17 @@
+Task 4: Dynamic Color Picker
+Description Create a simple color picker using three number input fields for
+red, green, and blue RGB. Change the background color based on the
+selected values.
+
+Functionality:
+Three numeric inputs (one for R, one for G, and one for B.
+
+A display element that shows the color with a rectangle.
+The rectangle's color changes based on input values.
+
+Ensure the inputs have validation logic.
+
+Key Topics:
+Event listeners on input change
+Getting input values and creating an rgb() color string
+Updating styles dynamically
