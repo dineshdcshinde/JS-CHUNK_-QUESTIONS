@@ -1,0 +1,69 @@
+Here are 10 DOM-related tasks with increasing difficulty levels to challenge and improve your skills:
+
+---
+
+### **Difficulty: Medium**
+
+#### **1. Drag-and-Drop To-Do List**
+- Create a to-do list with drag-and-drop functionality.
+- Users can rearrange tasks by dragging them.
+- Allow tasks to be marked as completed with a checkbox.
+- Topics: Drag-and-drop API, event delegation, state management.
+
+#### **2. Custom Tooltip**
+- Implement a custom tooltip component.
+- The tooltip appears on hover and follows the cursor with a slight offset.
+- The tooltip can display dynamic content based on the element being hovered over.
+- Topics: Mouse events, dynamic element creation, and positioning.
+
+#### **3. Infinite Scroll Image Gallery**
+- Create an image gallery that loads more images as the user scrolls down.
+- Fetch the images dynamically from an API.
+- Topics: Intersection Observer API, API fetching, lazy loading.
+
+#### **4. Keyboard-Operated Menu**
+- Build a navigation menu controlled by both mouse clicks and keyboard navigation (arrow keys).
+- Highlight the focused menu item and show submenus dynamically.
+- Topics: Keyboard events, ARIA roles, dynamic class updates.
+
+---
+
+### **Difficulty: Hard**
+
+#### **5. Resizable and Draggable Div**
+- Create a div that can be resized by dragging its edges and moved by dragging the entire div.
+- Constraints: The div cannot move outside its parent container.
+- Topics: Mouse events, calculations for resizing/moving, event cleanup.
+
+#### **6. Real-Time Search Filter**
+- Build a search component that filters a large dataset (e.g., a table or list).
+- Highlight the matching text dynamically as the user types.
+- Topics: Debouncing, DOM manipulation for filtering, and highlighting.
+
+#### **7. Animated Scroll-Based Progress Bar**
+- Create a progress bar at the top of the page that fills as the user scrolls down.
+- The progress bar updates in real-time, reflecting the scroll position.
+- Topics: Scroll events, math calculations for percentages.
+
+---
+
+### **Difficulty: Very Hard**
+
+#### **8. Custom Slider with Snap Points**
+- Create a custom slider with snap points at specific intervals (e.g., every 10px).
+- The slider should be keyboard-accessible and smoothly animate when moved.
+- Topics: Custom event handling, animations, keyboard support.
+
+#### **9. Interactive Canvas Drawing**
+- Build a simple drawing app using the `<canvas>` element.
+- Features include choosing brush colors, sizes, and an undo option.
+- Topics: Canvas API, mouse events, managing draw history.
+
+#### **10. Nested Drag-and-Drop List**
+- Create a nested list with full drag-and-drop functionality.
+- Users can move items between lists and within nested levels.
+- Highlight the drop area dynamically and update the hierarchy structure.
+- Topics: Drag-and-drop API, DOM traversal, complex state updates.
+
+---
+

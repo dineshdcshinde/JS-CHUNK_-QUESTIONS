@@ -31,5 +31,19 @@
 //   rectangle.style.backgroundColor = `rgba(${color.red}, ${color.green}, ${color.blue}, 1)`;
 // });
 
+// Q.5
 
+// document.querySelector(".tabs").addEventListener("click", (e) => {
+//   const tab = e.target.closest(".tab");
+//   if (!tab) return;
 
+//   // remove all the active classes
+//   document.querySelectorAll(".tab, .tab-content").forEach((ele) => {
+//     ele.classList.remove("active");
+//   });
+
+//   tab.classList.add("active");
+
+//   const targetId = tab.dataset.target;
+//   document.querySelector(`#${targetId}`).classList.add("active");
+// });

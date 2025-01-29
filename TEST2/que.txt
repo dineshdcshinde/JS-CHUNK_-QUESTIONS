@@ -15,3 +15,21 @@ Key Topics:
 Event listeners on input change
 Getting input values and creating an rgb() color string
 Updating styles dynamically
+
+
+
+
+
+Task 5: Simple Tabbed Content
+Description Create a simple tabbed content component where clicking on a
+tab displays corresponding content.
+Functionality:
+
+Create tab headings (buttons) and corresponding content areas ( <div> ).
+When a tab is clicked, display its associated content.
+Only one tab content should be visible at a time.
+Highlight the active tab.
+Key Topics:
+Event delegation on tab container
+Dynamic class updates ( active )
+Displaying associated content using data attributes

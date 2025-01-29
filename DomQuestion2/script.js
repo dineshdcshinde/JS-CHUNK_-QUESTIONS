@@ -1,19 +1,21 @@
-const formSubmit = document.querySelector("#formSubmit");
-const nameInput = document.querySelector("#name");
-const emailInput = document.querySelector("#email");
-const submitBtn = document.querySelector("#submitbtn");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let submitBtn = document.querySelector("button");
 
-const formData = {};
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
 
-formSubmit.addEventListener("submit", (e) => {
-  e.preventDefault();
+  function checkAvailability() {
+    if (!email && !password) {
+      submitBtn.disabled = true;
+    } else {
+      submitBtn.disabled = false;
+    }
+  }
+  checkAvailability();
 
-  let nameValue = nameInput.value.trim();
-  let emailValue = emailInput.value.trim();
-
-  formData.name = nameValue;
-  formData.email = emailValue;
-  console.log(formData);
-
-  console.log("form submit");
+  form.querySelector("input").addEventListener("change", checkAvailability);
 });

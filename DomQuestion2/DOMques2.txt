@@ -374,13 +374,72 @@ answer-
 
 	37.	Add a submit event listener to a form that logs the form data as an object when submitted.
 	answer- 
+	const formSubmit = document.querySelector("#formSubmit");
+	const nameInput = document.querySelector("#name");
+	const emailInput = document.querySelector("#email");
+	const submitBtn = document.querySelector("#submitbtn");
 
+	const formData = {};
 
+	formSubmit.addEventListener("submit", (e) => {
+	e.preventDefault();
 
+	let nameValue = nameInput.value.trim();
+	let emailValue = emailInput.value.trim();
+
+	formData.name = nameValue;
+	formData.email = emailValue;
+	console.log(formData);
+
+	console.log("form submit");
+	});
 	
 	38.	Write code to clear all form fields when a reset button is clicked.
+	answer-
+	const form = document.querySelector("form");
+	const email = document.querySelector("#email");
+	const password = document.querySelector("#password");
+	const reset = document.querySelector("#reset");
+
+	let formData = {};
+
+	form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	formData.email = email.value;
+	formData.password = password.value;
+
+	console.log(formData);
+	});
+
+	reset.addEventListener("click", () => {
+	email.value = "";
+	password.value = "";
+	});
+
 	39.	Create a function that dynamically adds a new <input> field when a button is clicked.
+	answer-
+	const btn = document.querySelector("button");
+
+	const addInputField = () => {
+	const input = document.createElement("input");
+	input.type = "text";
+	input.placeholder = "Enter something that you want ...";
+	document.body.appendChild(input);
+	};
+
+	btn.addEventListener("click", addInputField);
+
 	40.	Write a function to disable a form’s submit button until all required fields are filled.
+	answer-
+
+		
+
+
+
+
+
+
+
 	41.	Build a function to create a dynamic pagination system with numbered buttons.
 	42.	Write code to implement a “like” button that toggles between liked and unliked states on click.
 	43.	Create a to-do list app where items can be added, marked as completed, and removed.

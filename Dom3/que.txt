@@ -1,0 +1,16 @@
+password generator
+.length 
+uppercase /lowerCase
+chars
+sybol
+number
+
+
+2. todo list
+crud + complete and uncomplete
+
+3.login form 
+ui better
+remeber be 
+
+3. color picker 
