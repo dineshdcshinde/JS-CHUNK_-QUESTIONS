@@ -431,21 +431,73 @@ answer-
 
 	40.	Write a function to disable a form’s submit button until all required fields are filled.
 	answer-
+	document.addEventListener("DOMContentLoaded", function () {
+	const form = document.querySelector("form");
+	const submitBtn = document.querySelector("button");
 
-		
+	const inputs = [...document.querySelectorAll("input")];
 
+	function isAvailable() {
+		let allFeilds = inputs.every((input) => {
+		return input.value.trim() !== "";
+		});
+		submitBtn.disabled = !allFeilds;
+	}
 
+	// by default it will called to disable the submit button
+	isAvailable();
 
+	inputs.forEach((input) => input.addEventListener("input", isAvailable));
 
-
-
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+	});
+	});
 
 	41.	Build a function to create a dynamic pagination system with numbered buttons.
+	answer- 
+	function createPagination(totalPages, currentPage) {
+	const paginationContainer = document.querySelector("#pagination");
+
+	paginationContainer.innerHTML = "";
+
+	for (let i = 1; i <= totalPages; i++) {
+		const btn = document.createElement("button");
+		btn.innerText = i;
+
+		if (currentPage == i) {
+		btn.classList.add("active");
+		}
+
+		btn.addEventListener("click", () => {
+		createPagination(totalPages, i);
+		});
+		paginationContainer.appendChild(btn);
+	}
+	}
+	createPagination(5, 1);
+
 	42.	Write code to implement a “like” button that toggles between liked and unliked states on click.
+	answer- 
+
+
+
+
+
+
+
+
+
 	43.	Create a to-do list app where items can be added, marked as completed, and removed.
 	44.	Write a function to filter a list of items based on a search input field.
 	45.	Build a function that dynamically changes the theme of the webpage (e.g., dark mode and light mode).
+	
 	46.	Write a function to fetch data from an API and display it as a list inside a <div>.
+	answer- 
+
+
+
+
 	47.	Build a collapsible accordion where clicking on a section header toggles the visibility of its content.
 	48.	Write a function that highlights the active section in the navigation bar as the user scrolls.
 	49.	Implement an image carousel with next/previous buttons to navigate through the images.

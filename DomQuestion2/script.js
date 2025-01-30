@@ -1,21 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  let submitBtn = document.querySelector("button");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-  });
+const apiData = []
 
-  function checkAvailability() {
-    if (!email && !password) {
-      submitBtn.disabled = true;
-    } else {
-      submitBtn.disabled = false;
-    }
+
+const fetchData = async () => {
+  try {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const data = await response.json();
+   return apiData.push(data)
+  } catch (error) {
+    console.log(error.message);
   }
-  checkAvailability();
+};
 
-  form.querySelector("input").addEventListener("change", checkAvailability);
-});
+fetchData();
+
+
